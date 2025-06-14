@@ -1,37 +1,33 @@
-// File: api/send-wish.js
+// File: /api/sendMessage.js
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    const { message } = req.body;
 
-    const { wish } = req.body;
+    const telegramToken = process.env.BOT_TOKEN;
+    const telegramChatId = process.env.CHAT_ID;
 
-    const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
 
     try {
-      const response = await fetch(telegramApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch(telegramUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: `🎂 Pesan Ulang Tahun Baru:\n${wish}`,
+          chat_id: telegramChatId,
+          text: message,
         }),
       });
 
       const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(JSON.stringify(data));
-      }
-
-      res.status(200).json({ message: "Terkirim ke Telegram!" });
+      res.status(200).json({ ok: true, data });
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      console.error(error);
+      res.status(500).json({ ok: false, error: error.message });
     }
-
   } else {
-    // Method selain POST akan ditolak
-    res.status(405).json({ message: "Method Not Allowed" });
+    res.status(405).json({ ok: false, error: 'Method not allowed' });
   }
 }
