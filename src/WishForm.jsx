@@ -8,7 +8,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await fetch('/api/sendMessage', {
+    const response = await fetch('/api/send-wish', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
