@@ -1,48 +1,47 @@
-// src/components/WishForm.jsx
-
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function WishForm() {
-  const [wish, setWish] = useState('');
+  const [wish, setWish] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!wish.trim()) return alert("Tulis pesannya dulu ya 🤍");
+
     setLoading(true);
 
     try {
-      const response = await fetch('https://birthdaywinda.vercel.app/api/send-wish', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      await fetch(`${import.meta.env.VITE_API_URL}/api/send-wish`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ wish }),
       });
 
-      const data = await response.json();
-      alert(data.message || 'Terkirim!');
-
-      setWish('');
+      alert("Terima kasih! Pesanmu sudah dikirim 🎉");
+      setWish("");
     } catch (error) {
-      alert('Ups! Gagal mengirim.');
+      console.error(error);
+      alert("Ups! Gagal mengirim. Coba lagi ya.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+    <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
       <textarea
         value={wish}
         onChange={(e) => setWish(e.target.value)}
-        placeholder="Tulis ucapan di sini..."
-        required
-        className="p-2 border rounded"
+        placeholder="Tulis ucapanmu di sini..."
+        className="p-4 rounded-md border border-pink-300"
+        rows={4}
       />
       <button
         type="submit"
         disabled={loading}
-        className="bg-pink-500 text-white px-4 py-2 rounded"
+        className="bg-pink-600 text-white px-6 py-2 rounded-md hover:bg-pink-700"
       >
-        {loading ? 'Mengirim...' : 'Kirim Ucapan'}
+        {loading ? "Mengirim..." : "Kirim Ucapan 🎉"}
       </button>
     </form>
   );
