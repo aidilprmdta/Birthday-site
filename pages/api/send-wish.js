@@ -1,5 +1,4 @@
-// File: api/send-wish.js
-
+// File: pages/api/send-wish.js ✅
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -31,7 +30,6 @@ export default async function handler(req, res) {
     }
 
   } else {
-    // Method selain POST akan ditolak
     res.status(405).json({ message: "Method Not Allowed" });
   }
 }
