@@ -4,28 +4,29 @@ export default function WishForm() {
   const [wish, setWish] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!wish.trim()) return alert("Tulis pesannya dulu ya 🤍");
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setLoading(true);
+  try {
+    const response = await fetch('/api/sendMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: inputText }), // ganti inputText dengan state pesan kamu
+    });
 
-    try {
-      await fetch(`${import.meta.env.VITE_API_URL}/pages/api/send-wish`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ wish }),
-      });
-
-      alert("Terima kasih! Pesanmu sudah dikirim 🎉");
-      setWish("");
-    } catch (error) {
-      console.error(error);
-      alert("Ups! Gagal mengirim. Coba lagi ya.");
-    } finally {
-      setLoading(false);
+    const data = await response.json();
+    if (data.ok) {
+      alert('Pesan berhasil terkirim!');
+    } else {
+      alert('Gagal mengirim: ' + data.error);
     }
-  };
+  } catch (error) {
+    console.error(error);
+    alert('Terjadi error: ' + error.message);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
