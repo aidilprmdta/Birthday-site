@@ -11,7 +11,7 @@ export default function WishForm() {
     setLoading(true);
 
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/send-wish`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/pages/api/send-wish`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ wish }),
