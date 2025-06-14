@@ -8,16 +8,16 @@ export default async function handler(req, res) {
     const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
 
     try {
-      const response = await fetch(telegramUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: telegramChatId,
-          text: message,
-        }),
-      });
+        const response = await fetch(telegramUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: process.env.TELEGRAM_CHAT_ID,
+            text: message, // ambil dari req.body.message
+          }),
+        });
 
       const data = await response.json();
       res.status(200).json({ ok: true, data });
