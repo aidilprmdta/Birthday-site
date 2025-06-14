@@ -1,48 +1,43 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function WishForm() {
-  const [wish, setWish] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [inputText, setInputText] = useState('');
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/send-wish', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: inputText })
+      });
 
-  try {
-    const response = await fetch('/api/send-wish', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: inputText }), // ganti inputText dengan state pesan kamu
-    });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-    const data = await response.json();
-    if (data.ok) {
-      alert('Pesan berhasil terkirim!');
-    } else {
-      alert('Gagal mengirim: ' + data.error);
+      alert('Pesan terkirim 🎉');
+      setInputText(''); // reset field
+    } catch (error) {
+      alert('Terjadi error: ' + error.message);
     }
-  } catch (error) {
-    console.error(error);
-    alert('Terjadi error: ' + error.message);
-  }
-};
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex flex-col">
       <textarea
-        value={wish}
-        onChange={(e) => setWish(e.target.value)}
-        placeholder="Tulis ucapanmu di sini..."
-        className="p-4 rounded-md border border-pink-300"
-        rows={4}
+        className="border p-2"
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        placeholder="Tulis ucapanmu..."
       />
       <button
         type="submit"
-        disabled={loading}
-        className="bg-pink-600 text-white px-6 py-2 rounded-md hover:bg-pink-700"
+        className="bg-pink-500 text-white p-2 mt-2"
       >
-        {loading ? "Mengirim..." : "Kirim Ucapan 🎉"}
+        Kirim Ucapan 🎉
       </button>
     </form>
   );
