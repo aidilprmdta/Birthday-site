@@ -8,20 +8,19 @@ export default function WishForm() {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      await fetch('/api/send-wish', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ wish }),
-      });
-      alert('Terima kasih! Keinginanmu sudah dikirim 🎉');
-      setWish('');
-    } catch (error) {
-      alert('Ups! Gagal mengirim. Coba lagi ya.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    await fetch('/api/send-wish', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ wish }),
+    });
+    alert('Terima kasih! 🎉');
+    setWish('');
+  } catch (error) {
+    alert('Ups! Gagal kirim.');
+  } finally {
+    setLoading(false);
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
