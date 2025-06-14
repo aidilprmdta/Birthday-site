@@ -11,7 +11,7 @@ export default function WishForm() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/send-wish', {
+      const response = await fetch('https://birthdaywinda.vercel.app/api/send-wish', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ wish }),
