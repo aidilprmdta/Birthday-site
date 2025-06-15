@@ -347,7 +347,7 @@ export default function App() {
           className="mt-8 p-4 bg-white bg-opacity-50 rounded-xl backdrop-blur-sm shadow-sm"
         >
           <h3 className="text-xl font-semibold text-pink-700 mb-3">
-            Menuju Anniversary
+            Menuju Mensiversary
           </h3>
           <div className="flex justify-center gap-3">
             {Object.entries(timeLeft).map(([unit, value]) => (
