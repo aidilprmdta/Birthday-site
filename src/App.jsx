@@ -25,8 +25,9 @@ export default function App() {
     { title: "Christina Perri - A Thousand Years", src: "https://www.dropbox.com/scl/fi/7qynoaueslqgw2wmam32m/Christina_Perri_A_Thousand_Years.mp3?rlkey=i1c43dz09hhh06ax7s1b1jxpt&st=2cu8elv9&raw=1" },
     { title: "HIVI - Remaja", src: "https://www.dropbox.com/scl/fi/217rhtkycn4oq8rsmrhp6/HIVI-_Remaja.mp3?rlkey=nyfawnqn5yynajof272lm67mk&st=rmj3gfv6&raw=1" },
     { title: "Katy Perry - Unconditionally", src: "https://www.dropbox.com/scl/fi/4vzke8zhb8isdzhd8mx2k/Katy-Perry_Unconditionally.mp3?rlkey=ytnbo592o20h2w5myxa9i50b3&st=59d99vvu&raw=1" },
-    { title: "Raffa Affar - Cinta Sampai Mati", src: "https://www.dropbox.com/scl/fi/45cpri6xkuezxcw4iljwq/Raffa_Affar_Cinta_Sampai_Mati.mp3?rlkey=mfqooszptysdyev192jddw9zv&st=4e3hbc6h&raw=1" },
-    { title: "Sandhy Sondoro - Tak Pernah Padam", src: "https://www.dropbox.com/scl/fi/bkwtay7qeywx6123ybrdd/Sandhy_Sondoro_Tak_Pernah_Padam.mp3?rlkey=6144ujcd6i9v7x715lktx8g1z&st=o4yisuts&raw=1" },
+    { title: "Raffa Affar - Cinta Sampai Mati", src: "https://dl.dropboxusercontent.com/scl/fi/zgmr3gfbmso7acj4s12zk/Cinta-Sampai-Mati-Raffa-Affar-Lirik-Video.mp3?rlkey=442nccny5c6kh011jubu3gfpt&st=k6nqnurs" },
+    { title: "Surya Prtma - Pacar Cantik", src: "https://www.dropbox.com/scl/fi/c7nf3n35rtf1g74fmdpep/Surya-Prtma-Pacar-Cantik-Official-Lyric-Video.mp3?rlkey=oyug5y37ry6n3jsnhrmsqb0qv&st=3we4tz6s&dl=1" },
+    { title: "Sandhy Sondoro - Tak Pernah Padam", src: "https://www.dropbox.com/scl/fi/bkwtay7qeywx6123ybrdd/Sandhy_Sondoro_Tak_Pernah_Padam.mp3?rlkey=6144ujcd6i9v7x715lktx8g1z&st=o4yisuts&raw=1" }
   ];
 
   // Timer Aniversary
