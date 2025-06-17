@@ -1,7 +1,3 @@
-Okay! I've seen your GitHub repository URL: **[aidilprmdta/Birthday-site](https://github.com/aidilprmdta/Birthday-site)**. Here's an example **README.md** that you can use for your birthday website repo:
-
----
-
 # 🎂 Birthday Site
 
 Welcome to **Birthday Site**!
@@ -80,5 +76,3 @@ This project is personal and special. However, if you have a cool idea to add ot
 ## 📃 License
 
 This repository is made for personal and educational purposes. You are free to study it to create a similar website!
-
----
