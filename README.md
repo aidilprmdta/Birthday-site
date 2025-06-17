@@ -1,12 +1,84 @@
-# React + Vite
+Okay! I've seen your GitHub repository URL: **[aidilprmdta/Birthday-site](https://github.com/aidilprmdta/Birthday-site)**. Here's an example **README.md** that you can use for your birthday website repo:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 🎂 Birthday Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to **Birthday Site**!
+This website is designed specifically to give romantic and special birthday wishes to your loved ones. Built with ❤️ using **React**, **Tailwind CSS**, **Node.js**, and **Framer Motion** for smooth animations and a heartfelt user experience.
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🎵 **Romantic Music**: Romantic songs that automatically play to add to the atmosphere.
+* 💌 **Special Greeting**: Sweet and personalized love messages.
+
+* 🖼️ **Memory Gallery**: A collection of photos of beautiful moments together.
+
+* 💖 **Love Letter**: A love letter in a popup modal that can be read at any time.
+
+* 🫶 **Romantic Interaction Button**: Cute and romantic interactive buttons and animations.
+
+## 🛠️ Technologies Used
+
+* **Frontend**: React.js + Tailwind CSS + Framer Motion
+* **Backend**: Node.js (if there is server-side rendering or API settings)
+* **Audio Player**: HTML5 audio with custom controls
+
+## 📸 Screenshots
+
+> *Add a screenshot here to show the website.*
+
+## 🚀 How to Run the Project
+
+1. **Clone repository**
+
+```bash
+git clone https://github.com/aidilprmdta/Birthday-site.git
+```
+
+2. **Enter the project directory**
+
+```bash
+cd Birthday-site
+```
+
+3. **Install dependencies**
+
+```bash
+npm install
+```
+
+4. **Run the website**
+
+```bash
+npm run dev
+```
+
+5. **Open in browser**
+Go to `http://localhost:3000` to see your birthday greeting website.
+
+## 📂 Project Structure
+
+```
+Birthday-site/
+├── public/
+│ ├── images/ # Memories
+│ └── music/ # Romantic songs
+├── src/
+│ ├── components/ # React components
+│ ├── pages/ # Homepage
+│ ├── styles/ # Tailwind CSS and custom CSS
+│ └── App.jsx
+├── package.json
+└── README.md
+```
+
+## ❤️ Contributions
+
+This project is personal and special. However, if you have a cool idea to add other romantic features, please open an *issue* or *pull request*.
+
+## 📃 License
+
+This repository is made for personal and educational purposes. You are free to study it to create a similar website!
+
+---
